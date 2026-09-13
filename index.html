@@ -170,6 +170,444 @@ h2{
   }
 }
 
+
+/* ================================
+   VÜCUT KAŞİFİ 3.0
+   Premium Mobile App Interface
+   ================================ */
+
+:root{
+  --vk-primary:#19D9B5;
+  --vk-primary-dark:#087F73;
+  --vk-blue:#5574E8;
+  --vk-navy:#102A43;
+  --vk-ink:#16202A;
+  --vk-muted:#6B7280;
+  --vk-bg:#F6FBFA;
+  --vk-card:#FFFFFF;
+  --vk-border:rgba(16,42,67,.08);
+  --vk-shadow:0 14px 34px rgba(16,42,67,.08);
+}
+
+*{
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--vk-bg);
+}
+
+body{
+  background:
+    radial-gradient(circle at 100% 0%,rgba(25,217,181,.13),transparent 28%),
+    radial-gradient(circle at 0% 45%,rgba(85,116,232,.08),transparent 30%),
+    var(--vk-bg);
+  color:var(--vk-ink);
+  padding-bottom:92px;
+}
+
+.app{
+  max-width:520px;
+  margin:auto;
+  min-height:100vh;
+  padding:14px 16px 30px;
+}
+
+/* HEADER */
+
+.top{
+  min-height:70px;
+  padding:4px 2px 8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  min-width:0;
+}
+
+.brand-logo{
+  height:56px;
+  width:auto;
+  max-width:210px;
+  display:block;
+  object-fit:contain;
+}
+
+.stars{
+  flex:none;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:10px 15px;
+  border:1px solid rgba(16,42,67,.07);
+  border-radius:999px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 8px 24px rgba(16,42,67,.08);
+  font-weight:900;
+  color:var(--vk-navy);
+  backdrop-filter:blur(12px);
+}
+
+/* HERO */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  margin-top:12px;
+  min-height:300px;
+  border-radius:32px;
+  padding:26px 22px;
+  background:
+    radial-gradient(circle at 88% 16%,rgba(255,255,255,.30),transparent 23%),
+    radial-gradient(circle at 80% 90%,rgba(85,116,232,.42),transparent 34%),
+    linear-gradient(135deg,#087F73 0%,#19BFA8 45%,#5574E8 100%);
+  box-shadow:0 20px 45px rgba(16,42,67,.17);
+}
+
+.hero:before{
+  content:"🧬";
+  position:absolute;
+  right:20px;
+  bottom:22px;
+  font-size:86px;
+  line-height:1;
+  opacity:.16;
+  transform:rotate(-8deg);
+  pointer-events:none;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:190px;
+  height:190px;
+  right:-80px;
+  bottom:-105px;
+  border-radius:50%;
+  background:rgba(255,255,255,.11);
+  pointer-events:none;
+}
+
+.hero h1{
+  position:relative;
+  z-index:2;
+  margin:0 0 10px;
+  font-size:32px;
+  line-height:1.08;
+  letter-spacing:-1px;
+  max-width:330px;
+}
+
+.hero p{
+  position:relative;
+  z-index:2;
+  max-width:355px;
+  margin:0 0 22px;
+  font-size:17px;
+  line-height:1.48;
+  opacity:.94;
+}
+
+.hero button{
+  position:relative;
+  z-index:3;
+  border:0;
+  border-radius:17px;
+  padding:15px 21px;
+  min-height:52px;
+  font-size:16px;
+  font-weight:900;
+  box-shadow:0 10px 24px rgba(0,0,0,.15);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+
+.hero button:active{
+  transform:scale(.97);
+  box-shadow:0 6px 15px rgba(0,0,0,.12);
+}
+
+/* SECTION */
+
+.section{
+  margin-top:27px;
+}
+
+.section h2{
+  margin:0 0 14px 2px;
+  font-size:25px;
+  line-height:1.1;
+  letter-spacing:-.7px;
+}
+
+/* ORGAN CARDS */
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.card{
+  position:relative;
+  overflow:hidden;
+  min-height:185px;
+  padding:17px;
+  border:1px solid var(--vk-border);
+  border-radius:24px;
+  background:rgba(255,255,255,.94);
+  box-shadow:var(--vk-shadow);
+  transition:transform .16s ease,box-shadow .16s ease;
+}
+
+.card:before{
+  content:"";
+  position:absolute;
+  width:75px;
+  height:75px;
+  right:-28px;
+  top:-28px;
+  border-radius:50%;
+  background:rgba(25,217,181,.08);
+}
+
+.card:after{
+  content:"Keşfet →";
+  position:absolute;
+  right:14px;
+  bottom:13px;
+  font-size:11px;
+  font-weight:800;
+  color:var(--vk-primary-dark);
+  opacity:.75;
+}
+
+.card:active{
+  transform:scale(.975);
+  box-shadow:0 8px 20px rgba(16,42,67,.08);
+}
+
+.card .icon{
+  position:relative;
+  z-index:1;
+  font-size:43px;
+  line-height:1;
+  margin-bottom:10px;
+}
+
+.card h3{
+  position:relative;
+  z-index:1;
+  margin:0 0 5px;
+  font-size:21px;
+  letter-spacing:-.4px;
+}
+
+.card .muted{
+  position:relative;
+  z-index:1;
+  color:var(--vk-muted);
+  font-size:14px;
+  line-height:1.35;
+  max-width:130px;
+}
+
+/* PROGRESS DECORATION */
+
+.card[data-topic]{
+  padding-bottom:43px;
+}
+
+.card[data-topic]:not([data-topic="bones"]) .muted:after{
+  content:"";
+  display:block;
+  width:62px;
+  height:5px;
+  margin-top:10px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--vk-primary) 65%,#E8EFF0 65%);
+}
+
+.card[data-topic="bones"] .muted:after{
+  content:"";
+  display:block;
+  width:62px;
+  height:5px;
+  margin-top:10px;
+  border-radius:99px;
+  background:linear-gradient(90deg,var(--vk-primary) 45%,#E8EFF0 45%);
+}
+
+/* QUIZ */
+
+.back{
+  border:1px solid var(--vk-border);
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 5px 16px rgba(16,42,67,.05);
+}
+
+.progress{
+  height:9px;
+  margin-top:12px;
+  background:#E5ECEB;
+  border-radius:99px;
+  overflow:hidden;
+}
+
+.bar{
+  height:100%;
+  background:linear-gradient(90deg,var(--vk-primary),var(--vk-blue));
+  transition:width .3s ease;
+}
+
+.bodymap{
+  padding:20px 10px 8px;
+  text-align:center;
+  font-size:105px;
+}
+
+.question{
+  font-size:23px;
+  line-height:1.22;
+  letter-spacing:-.4px;
+}
+
+.answer{
+  border:2px solid #E8ECEE;
+  border-radius:16px;
+  background:#fff;
+  min-height:54px;
+  transition:transform .14s ease,border-color .14s ease;
+}
+
+.answer:active{
+  transform:scale(.985);
+}
+
+.answer.correct{
+  background:#E9FAF4;
+  border-color:#4FC39A;
+}
+
+.answer.wrong{
+  background:#FFF0F4;
+  border-color:#FF8BA7;
+}
+
+/* LEARN */
+
+.learn{
+  border:1px solid var(--vk-border);
+  border-radius:25px;
+  padding:22px;
+  background:#fff;
+  box-shadow:var(--vk-shadow);
+  line-height:1.6;
+}
+
+/* BOTTOM APP NAVIGATION */
+
+.vk-nav{
+  position:fixed;
+  z-index:1000;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:min(520px,100%);
+  padding:
+    8px 10px
+    calc(8px + env(safe-area-inset-bottom))
+    8px;
+  border-top:1px solid rgba(16,42,67,.08);
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(22px) saturate(160%);
+  -webkit-backdrop-filter:blur(22px) saturate(160%);
+}
+
+.vk-nav-inner{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:5px;
+  max-width:480px;
+  margin:auto;
+}
+
+.vk-nav button{
+  border:0;
+  background:transparent;
+  color:#7B838B;
+  border-radius:15px;
+  min-height:58px;
+  padding:6px 3px;
+  font-size:11px;
+  font-weight:800;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:3px;
+}
+
+.vk-nav button .nav-icon{
+  font-size:22px;
+  line-height:1;
+}
+
+.vk-nav button.active{
+  color:var(--vk-primary-dark);
+  background:rgba(25,217,181,.10);
+}
+
+.vk-nav button:active{
+  transform:scale(.94);
+}
+
+/* SMALL PHONES */
+
+@media(max-width:380px){
+  .app{
+    padding-left:13px;
+    padding-right:13px;
+  }
+
+  .brand-logo{
+    height:50px;
+    max-width:180px;
+  }
+
+  .stars{
+    padding:8px 12px;
+  }
+
+  .hero{
+    min-height:285px;
+    padding:23px 19px;
+  }
+
+  .hero h1{
+    font-size:28px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .card{
+    min-height:175px;
+    padding:15px;
+  }
+
+  .card .icon{
+    font-size:39px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -199,6 +637,27 @@ h2{
 <div class="learn" id="learnBox"></div>
 </section>
 </div>
+
+<nav class="vk-nav" aria-label="Ana navigasyon">
+  <div class="vk-nav-inner">
+    <button class="active" data-nav="home">
+      <span class="nav-icon">⌂</span>
+      <span>Ana Sayfa</span>
+    </button>
+    <button data-nav="support">
+      <span class="nav-icon">♡</span>
+      <span>Destek</span>
+    </button>
+    <button data-nav="progress">
+      <span class="nav-icon">◔</span>
+      <span>İlerleme</span>
+    </button>
+    <button data-nav="profile">
+      <span class="nav-icon">◯</span>
+      <span>Profil</span>
+    </button>
+  </div>
+</nav>
 
 <script>
 const qs=[
@@ -231,6 +690,53 @@ $("play").onclick=()=>{i=0;score=0;$("stars").textContent="⭐ 0";show("quiz");r
 $("next").onclick=()=>{if(i<qs.length-1){i++;render()}else{$("emoji").textContent="🏆";$("question").textContent="Keşif tamamlandı!";$("answers").innerHTML="";$("msg").textContent="⭐ "+score+" / "+qs.length+" doğru. Harika bir vücut kaşifisin!";$("next").textContent="Tekrar oyna";$("next").style.display="block";$("next").onclick=()=>{$("next").textContent="Devam et →";i=0;score=0;render()}}};
 $("backQuiz").onclick=()=>show("home");$("backLearn").onclick=()=>show("home");
 document.querySelectorAll("[data-topic]").forEach(c=>c.onclick=()=>{const d={brain:["🧠 Beyin","Beyin vücudumuzun kontrol merkezlerinden biridir. Düşünmemize, öğrenmemize, hatırlamamıza ve hareketlerimizi yönetmemize yardım eder."],heart:["❤️ Kalp","Kalp bir pompa gibi çalışır ve kanı vücudumuzun her yerine gönderir."],lungs:["🫁 Akciğerler","Akciğerler nefes almamıza ve oksijeni vücudumuzun kullanmasına yardım eder."],bones:["🦴 Kemikler","Kemikler vücudumuza destek ve şekil verir. Kafatası gibi bazıları organları korur."]}[c.dataset.topic];$("learnBox").innerHTML="<div style='font-size:60px'>"+d[0].split(" ")[0]+"</div><h2>"+d[0]+"</h2><p>"+d[1]+"</p>";show("learn")});
+
+// VÜCUT KAŞİFİ 3.0 NAVIGATION
+document.querySelectorAll(".vk-nav button").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".vk-nav button")
+      .forEach(x=>x.classList.remove("active"));
+    btn.classList.add("active");
+
+    const target=btn.dataset.nav;
+
+    if(target==="home"){
+      show("home");
+      window.scrollTo({top:0,behavior:"smooth"});
+    }
+
+    if(target==="support"){
+      show("learn");
+      $("learnBox").innerHTML=
+        '<div style="font-size:55px">💚</div>'+
+        '<h2>Destek</h2>'+
+        '<p>Zorlandığında dur, nefes al ve kendine zaman tanı. '+
+        'Burada küçük bir mola verebilir ve yeniden keşfe dönebilirsin.</p>';
+    }
+
+    if(target==="progress"){
+      show("learn");
+      const total=qs.length;
+      const percent=Math.round((score/total)*100);
+      $("learnBox").innerHTML=
+        '<div style="font-size:55px">📈</div>'+
+        '<h2>İlerlemen</h2>'+
+        '<p><strong>'+score+' / '+total+'</strong> doğru cevap.</p>'+
+        '<div class="progress"><div class="bar" style="width:'+percent+'%"></div></div>'+
+        '<p>Her keşif seni insan vücudunu anlamaya biraz daha yaklaştırır.</p>';
+    }
+
+    if(target==="profile"){
+      show("learn");
+      $("learnBox").innerHTML=
+        '<div style="font-size:55px">🧑‍🔬</div>'+
+        '<h2>Minik Bilim İnsanı</h2>'+
+        '<p>Topladığın yıldızlar: <strong>⭐ '+score+'</strong></p>'+
+        '<p>Keşfetmeye devam et. Bilim merakla başlar.</p>';
+    }
+  });
+});
+
 </script>
 </body>
 </html>
