@@ -953,6 +953,167 @@ body{
 }
 
 </style>
+
+<style id="vk33-style">
+/* VÜCUT KAŞİFİ 3.3 — MİNİ DENEYİM */
+.brain-experience{
+  position:fixed;
+  inset:0;
+  z-index:1000;
+  display:none;
+  padding:
+    max(18px,env(safe-area-inset-top))
+    16px
+    max(18px,env(safe-area-inset-bottom));
+  background:
+    radial-gradient(circle at 50% 25%,rgba(25,217,181,.18),transparent 38%),
+    linear-gradient(160deg,#06171b,#092b31 55%,#06171b);
+  color:#fff;
+  overflow:auto;
+}
+.brain-experience.active{
+  display:flex;
+  flex-direction:column;
+}
+.brain-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:48px;
+}
+.brain-close{
+  width:46px;
+  height:46px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  font-size:25px;
+}
+.brain-progress{
+  width:120px;
+  height:8px;
+  border-radius:20px;
+  background:rgba(255,255,255,.14);
+  overflow:hidden;
+}
+.brain-progress span{
+  display:block;
+  width:25%;
+  height:100%;
+  border-radius:20px;
+  background:#19d9b5;
+  transition:width .35s ease;
+}
+.brain-title{
+  text-align:center;
+  font-size:clamp(25px,7vw,34px);
+  font-weight:900;
+  margin:20px 0 4px;
+}
+.brain-sub{
+  text-align:center;
+  opacity:.72;
+  font-size:15px;
+  margin:0 0 15px;
+}
+.brain-visual{
+  width:min(82vw,330px);
+  aspect-ratio:1;
+  margin:5px auto 18px;
+  border-radius:38px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.11);
+  box-shadow:0 25px 70px rgba(0,0,0,.28);
+  position:relative;
+}
+.brain-emoji{
+  font-size:clamp(110px,31vw,170px);
+  filter:drop-shadow(0 15px 25px rgba(255,100,190,.2));
+  transition:transform .35s ease,filter .35s ease;
+}
+.brain-visual.pulse .brain-emoji{
+  animation:brainPulse .65s ease;
+}
+@keyframes brainPulse{
+  0%{transform:scale(1)}
+  45%{transform:scale(1.16) rotate(-3deg)}
+  75%{transform:scale(.96) rotate(3deg)}
+  100%{transform:scale(1)}
+}
+.brain-spark{
+  position:absolute;
+  font-size:28px;
+  opacity:0;
+}
+.brain-visual.pulse .brain-spark{
+  animation:spark .7s ease forwards;
+}
+.brain-spark.s1{top:18%;left:18%}
+.brain-spark.s2{top:22%;right:18%}
+.brain-spark.s3{bottom:18%;left:25%}
+@keyframes spark{
+  0%{opacity:0;transform:scale(.4)}
+  35%{opacity:1}
+  100%{opacity:0;transform:scale(1.4) translateY(-12px)}
+}
+.brain-action{
+  width:100%;
+  min-height:64px;
+  border:0;
+  border-radius:22px;
+  font-size:21px;
+  font-weight:900;
+  color:#05201f;
+  background:#19d9b5;
+  box-shadow:0 12px 30px rgba(25,217,181,.22);
+  margin-top:auto;
+}
+.brain-action:active{
+  transform:scale(.97);
+}
+.brain-message{
+  min-height:30px;
+  text-align:center;
+  font-size:18px;
+  font-weight:800;
+  margin:13px 0 7px;
+}
+.brain-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:8px;
+}
+.brain-option{
+  min-height:94px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:22px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:48px;
+  transition:.2s;
+}
+.brain-option:active{
+  transform:scale(.94);
+}
+.brain-option.correct{
+  background:rgba(25,217,181,.28);
+  border-color:#19d9b5;
+}
+.brain-option.wrong{
+  animation:wrongShake .35s ease;
+  background:rgba(255,90,110,.2);
+}
+@keyframes wrongShake{
+  25%{transform:translateX(-7px)}
+  50%{transform:translateX(7px)}
+  75%{transform:translateX(-4px)}
+}
+</style>
+
 </head>
 <body>
 <div class="app">
@@ -1585,6 +1746,169 @@ document.querySelectorAll(".vk-nav button")
    }
  });
 });
+</script>
+
+
+<div class="brain-experience" id="brainExperience" aria-hidden="true">
+  <div class="brain-top">
+    <button class="brain-close" id="brainClose" aria-label="Kapat">×</button>
+    <div class="brain-progress"><span id="brainProgress"></span></div>
+    <div style="width:46px"></div>
+  </div>
+
+  <div class="brain-title" id="brainTitle">Beyni keşfet!</div>
+  <div class="brain-sub" id="brainSub">Dokun ve ne olduğunu gör.</div>
+
+  <div class="brain-visual" id="brainVisual">
+    <div class="brain-emoji">🧠</div>
+    <div class="brain-spark s1">✨</div>
+    <div class="brain-spark s2">⚡</div>
+    <div class="brain-spark s3">✨</div>
+  </div>
+
+  <div class="brain-message" id="brainMessage">Hazırsan başlayalım!</div>
+
+  <button class="brain-action" id="brainAction">👆 DOKUN</button>
+
+  <div class="brain-options" id="brainOptions" style="display:none">
+    <button class="brain-option" data-answer="🧠">🧠</button>
+    <button class="brain-option" data-answer="❤️">❤️</button>
+    <button class="brain-option" data-answer="🫁">🫁</button>
+    <button class="brain-option" data-answer="🦴">🦴</button>
+  </div>
+</div>
+
+
+<script id="vk33-engine">
+(function(){
+  const experience=document.getElementById("brainExperience");
+  if(!experience) return;
+
+  const close=document.getElementById("brainClose");
+  const action=document.getElementById("brainAction");
+  const visual=document.getElementById("brainVisual");
+  const message=document.getElementById("brainMessage");
+  const title=document.getElementById("brainTitle");
+  const sub=document.getElementById("brainSub");
+  const progress=document.getElementById("brainProgress");
+  const options=document.getElementById("brainOptions");
+
+  let step=0;
+
+  function voice(text){
+    if(window.speechSynthesis){
+      speechSynthesis.cancel();
+      const u=new SpeechSynthesisUtterance(text);
+      u.lang="tr-TR";
+      u.rate=.82;
+      u.pitch=1.04;
+      u.volume=1;
+      const voices=speechSynthesis.getVoices();
+      const tr=voices.find(v=>v.lang&&v.lang.toLowerCase().startsWith("tr"));
+      if(tr) u.voice=tr;
+      speechSynthesis.speak(u);
+    }
+  }
+
+  function pulse(){
+    visual.classList.remove("pulse");
+    void visual.offsetWidth;
+    visual.classList.add("pulse");
+  }
+
+  function open(){
+    step=0;
+    experience.classList.add("active");
+    experience.setAttribute("aria-hidden","false");
+    options.style.display="none";
+    action.style.display="block";
+    title.textContent="Beyni keşfet!";
+    sub.textContent="Dokun ve ne olduğunu gör.";
+    message.textContent="Hazırsan başlayalım!";
+    progress.style.width="25%";
+    voice("Beyni keşfetmeye hazır mısın?");
+  }
+
+  function exit(){
+    experience.classList.remove("active");
+    experience.setAttribute("aria-hidden","true");
+    if(window.speechSynthesis) speechSynthesis.cancel();
+  }
+
+  function next(){
+    step++;
+    pulse();
+
+    if(step===1){
+      title.textContent="Beyin çalışıyor!";
+      sub.textContent="Beyin bizim kontrol merkezimiz.";
+      message.textContent="✨ Düşünürüz!";
+      progress.style.width="50%";
+      voice("Beynimiz düşünmemize yardım eder.");
+      action.textContent="👆 BİR KEZ DAHA";
+    }
+    else if(step===2){
+      title.textContent="Şimdi oyun!";
+      sub.textContent="Doğru olanı bul.";
+      message.textContent="🧠 Beyni bul!";
+      progress.style.width="75%";
+      action.style.display="none";
+      options.style.display="grid";
+      voice("Beyni bul.");
+    }
+  }
+
+  action.addEventListener("click",next);
+  close.addEventListener("click",exit);
+
+  options.querySelectorAll(".brain-option").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      if(btn.dataset.answer==="🧠"){
+        btn.classList.add("correct");
+        message.textContent="🎉 HARİKA!";
+        progress.style.width="100%";
+        pulse();
+        voice("Harika! Beyni buldun.");
+        setTimeout(()=>{
+          title.textContent="Beyin tamam!";
+          sub.textContent="Bir sonraki organ seni bekliyor.";
+          message.textContent="⭐ Süpersin!";
+          options.style.display="none";
+          action.style.display="block";
+          action.textContent="✓ BİTİR";
+        },900);
+        action.onclick=()=>{
+          exit();
+          action.onclick=next;
+          action.textContent="👆 DOKUN";
+        };
+      }else{
+        btn.classList.add("wrong");
+        message.textContent="🙂 Tekrar deneyelim!";
+        voice("Tekrar deneyelim.");
+        setTimeout(()=>btn.classList.remove("wrong"),400);
+      }
+    });
+  });
+
+  window.openBrainExperience=open;
+})();
+</script>
+
+
+<script id="VK33-BRAIN-LINK">
+(function(){
+  const brain=document.querySelector('.vk-organ[data-topic="brain"]');
+  if(!brain) return;
+
+  brain.addEventListener("click",function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    if(window.openBrainExperience){
+      window.openBrainExperience();
+    }
+  },true);
+})();
 </script>
 
 </body>
