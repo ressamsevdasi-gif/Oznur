@@ -608,6 +608,110 @@ body{
   }
 }
 
+
+/* =================================
+   VÜCUT KAŞİFİ 3.1 — MOBILE POLISH
+   ================================= */
+
+body{
+  padding-bottom:0;
+}
+
+.app{
+  padding-bottom:125px;
+}
+
+/* Hero daha dengeli */
+.hero{
+  min-height:270px;
+  padding:24px 21px;
+}
+
+.hero h1{
+  font-size:30px;
+}
+
+.hero p{
+  max-width:340px;
+  margin-bottom:19px;
+}
+
+/* Kartları biraz daha kompakt yap */
+.card{
+  min-height:174px;
+  padding:16px;
+}
+
+.card .icon{
+  font-size:40px;
+  margin-bottom:8px;
+}
+
+/* Alt uygulama çubuğu */
+.vk-nav{
+  padding:
+    7px 10px
+    calc(8px + env(safe-area-inset-bottom))
+    7px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 -8px 28px rgba(16,42,67,.07);
+}
+
+.vk-nav-inner{
+  max-width:480px;
+}
+
+.vk-nav button{
+  min-height:56px;
+}
+
+.vk-nav button.active{
+  box-shadow:inset 0 0 0 1px rgba(25,217,181,.06);
+}
+
+/* Mobil */
+@media(max-width:480px){
+  .app{
+    padding-bottom:125px;
+  }
+
+  .hero{
+    min-height:265px;
+  }
+
+  .hero h1{
+    font-size:29px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  .card{
+    min-height:170px;
+  }
+}
+
+/* Küçük ekran */
+@media(max-width:380px){
+  .app{
+    padding-bottom:122px;
+  }
+
+  .hero{
+    min-height:250px;
+    padding:21px 18px;
+  }
+
+  .hero h1{
+    font-size:27px;
+  }
+
+  .card{
+    min-height:160px;
+  }
+}
+
 </style>
 </head>
 <body>
