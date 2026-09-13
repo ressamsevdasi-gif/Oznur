@@ -1,0 +1,12 @@
+Vücut Kaşifi logo + PWA ikonları.
+
+1) ZIP'i ~/vucut-kasifi içinde açın.
+2) index.html <head> içine ekleyin:
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" sizes="192x192" href="assets/icon-192.png">
+3) Header'daki .brand içeriğini şu img ile değiştirin:
+<img class="brand-logo" src="assets/logo.svg" alt="Vücut Kaşifi">
+4) CSS'e ekleyin:
+.brand-logo{height:44px;width:auto;display:block;object-fit:contain}
+
+manifest.webmanifest bu pakette ikonlarla güncellenmiştir.
