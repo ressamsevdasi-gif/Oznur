@@ -3,13 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#7c5cff">
+<meta name="theme-color" content="#19D9B5">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" sizes="192x192" href="assets/icon-192.png">
 <title>Vücut Kaşifi</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(160deg,#f7f4ff,#fff7fb);color:#20202a}
 .app{max-width:520px;margin:auto;min-height:100vh;padding:18px 16px 30px}.top{display:flex;justify-content:space-between;align-items:center}
-.brand{font-size:24px;font-weight:900}.stars{background:#fff;border:1px solid #eee;border-radius:20px;padding:8px 12px;font-weight:800}
+.brand{font-size:24px;font-weight:900;display:flex;align-items:center}.brand-logo{height:44px;width:auto;display:block;object-fit:contain}.stars{background:#fff;border:1px solid #eee;border-radius:20px;padding:8px 12px;font-weight:800}
 .hero{margin-top:18px;background:linear-gradient(135deg,#7c5cff,#a98cff);color:white;border-radius:28px;padding:22px;box-shadow:0 12px 30px #7c5cff25}
 .hero h1{margin:0 0 8px;font-size:30px}.hero p{margin:0 0 18px;opacity:.9}
 button{border:0;border-radius:17px;padding:14px 18px;font-size:16px;font-weight:800;cursor:pointer;min-height:48px}
@@ -24,7 +26,7 @@ button{border:0;border-radius:17px;padding:14px 18px;font-size:16px;font-weight:
 </head>
 <body>
 <div class="app">
-<div class="top"><div class="brand">🧒 Vücut Kaşifi</div><div class="stars" id="stars">⭐ 0</div></div>
+<div class="top"><div class="brand"><img class="brand-logo" src="assets/logo.svg" alt="Vücut Kaşifi"></div><div class="stars" id="stars">⭐ 0</div></div>
 
 <section id="home" class="screen active">
 <div class="hero"><h1>Minik bilim insanı!</h1><p>Oyna, keşfet, yıldızları topla. Fark etmeden insan vücudunu öğren.</p><button class="primary" id="play">🚀 Keşfe Başla</button></div>
