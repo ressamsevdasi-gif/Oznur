@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#7c5cff">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Vücut Kaşifi</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:linear-gradient(160deg,#f7f4ff,#fff7fb);color:#20202a}
+.app{max-width:520px;margin:auto;min-height:100vh;padding:18px 16px 30px}.top{display:flex;justify-content:space-between;align-items:center}
+.brand{font-size:24px;font-weight:900}.stars{background:#fff;border:1px solid #eee;border-radius:20px;padding:8px 12px;font-weight:800}
+.hero{margin-top:18px;background:linear-gradient(135deg,#7c5cff,#a98cff);color:white;border-radius:28px;padding:22px;box-shadow:0 12px 30px #7c5cff25}
+.hero h1{margin:0 0 8px;font-size:30px}.hero p{margin:0 0 18px;opacity:.9}
+button{border:0;border-radius:17px;padding:14px 18px;font-size:16px;font-weight:800;cursor:pointer;min-height:48px}
+.primary{background:white;color:#6547d9}.section{margin-top:20px}.section h2{font-size:20px;margin:0 0 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{background:#fff;border:1px solid #ececf2;border-radius:22px;padding:17px;box-shadow:0 5px 18px #22222208}
+.icon{font-size:38px}.card h3{margin:7px 0 4px}.muted{color:#737381;font-size:14px}.screen{display:none}.screen.active{display:block}
+.back{background:#fff;border:1px solid #e9e9ef;margin-bottom:14px}.question{font-size:23px;font-weight:900;margin:12px 0 16px}.answers{display:grid;gap:10px}.answer{text-align:left;background:#fff;border:2px solid #eee}.answer.correct{background:#e9faf2;border-color:#5bc49a}.answer.wrong{background:#fff0f4;border-color:#ff8ba7}.msg{min-height:48px;margin:14px 0;font-weight:700}
+.progress{height:10px;background:#e8e8ef;border-radius:99px;overflow:hidden}.bar{height:100%;width:0;background:#7c5cff;transition:.25s}
+.bodymap{text-align:center;font-size:120px;padding:10px}.learn{background:#fff;border:1px solid #ececf2;border-radius:22px;padding:18px;line-height:1.5}
+@media(max-width:350px){.grid{grid-template-columns:1fr}.hero h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="top"><div class="brand">🧒 Vücut Kaşifi</div><div class="stars" id="stars">⭐ 0</div></div>
+
+<section id="home" class="screen active">
+<div class="hero"><h1>Minik bilim insanı!</h1><p>Oyna, keşfet, yıldızları topla. Fark etmeden insan vücudunu öğren.</p><button class="primary" id="play">🚀 Keşfe Başla</button></div>
+<div class="section"><h2>Keşifler</h2><div class="grid">
+<div class="card" data-topic="brain"><div class="icon">🧠</div><h3>Beyin</h3><div class="muted">Vücudun kumandası</div></div>
+<div class="card" data-topic="heart"><div class="icon">❤️</div><h3>Kalp</h3><div class="muted">Kanı pompalar</div></div>
+<div class="card" data-topic="lungs"><div class="icon">🫁</div><h3>Akciğer</h3><div class="muted">Nefes arkadaşımız</div></div>
+<div class="card" data-topic="bones"><div class="icon">🦴</div><h3>Kemikler</h3><div class="muted">Vücudun iskeleti</div></div>
+</div></div>
+</section>
+
+<section id="quiz" class="screen">
+<button class="back" id="backQuiz">← Ana sayfa</button>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="bodymap" id="emoji">🧒</div><div class="question" id="question"></div>
+<div class="answers" id="answers"></div><div class="msg" id="msg"></div>
+<button class="primary" id="next" style="display:none;width:100%">Devam et →</button>
+</section>
+
+<section id="learn" class="screen">
+<button class="back" id="backLearn">← Ana sayfa</button>
+<div class="learn" id="learnBox"></div>
+</section>
+</div>
+
+<script>
+const qs=[
+["🧠","Beynimiz ne işe yarar?",["Düşünmemize ve vücudu yönetmemize yardım eder","Yiyecekleri çiğner","Kanı pompalar"],0,"Beyin, düşünme, öğrenme, hatırlama ve hareketlerimizi yönetmeye yardım eder."],
+["❤️","Kalbimiz ne yapar?",["Kanı pompalar","Sesleri duyar","Yiyecekleri görür"],0,"Kalp, kanı vücudumuzun her yerine gönderen güçlü bir pompa gibi çalışır."],
+["🫁","Nefes aldığımızda hava nereye gider?",["Akciğerlere","Kemiklere","Dişlere"],0,"Akciğerler nefes aldığımız havadaki oksijeni vücudumuzun kullanmasına yardım eder."],
+["🦴","Kemiklerimizin önemli görevlerinden biri nedir?",["Vücudumuza destek olmak","Tatları koklamak","Ses çıkarmak"],0,"Kemikler vücudumuza şekil ve destek verir; kafatası gibi bazı kemikler organları korur."],
+["💪","Kaslarımız neye yardım eder?",["Hareket etmeye","Duymaya","Koklamaya"],0,"Kaslar kemiklerle birlikte çalışarak yürümemize, koşmamıza ve hareket etmemize yardım eder."],
+["👀","Gözlerimiz ne işe yarar?",["Görmemizi sağlar","Kanı pompalar","Yiyecekleri sindirir"],0,"Gözler çevremizdeki dünyayı görmemizi sağlar."],
+["👂","Kulaklarımız ne işe yarar?",["Duymamızı sağlar","Yemekleri parçalar","Kemikleri büyütür"],0,"Kulaklarımız sesleri duymamızı sağlar."],
+["🥣","Midemizin işi nedir?",["Yiyecekleri sindirmeye yardım etmek","Görmek","Nefes almak"],0,"Mide, yediğimiz yiyeceklerin sindirilmesine yardım eder."]
+];
+let i=0,score=0,answered=false;
+const $=id=>document.getElementById(id);
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));$(id).classList.add("active")}
+function render(){
+ const q=qs[i]; answered=false; $("emoji").textContent=q[0]; $("question").textContent=q[1];
+ $("bar").style.width=(i/qs.length*100)+"%"; $("msg").textContent=""; $("next").style.display="none";
+ $("answers").innerHTML="";
+ q[2].forEach((t,n)=>{const b=document.createElement("button");b.className="answer";b.textContent=t;b.onclick=()=>answer(n,b);$("answers").appendChild(b)})
+}
+function answer(n,b){
+ if(answered)return;answered=true;const q=qs[i];
+ if(n===q[3]){score++;b.classList.add("correct");$("msg").textContent="🎉 Harika! "+q[4]}
+ else{$("msg").textContent="💡 Doğru cevap: "+q[2][q[3]]+". "+q[4];b.classList.add("wrong")}
+ [...$("answers").children].forEach((x,j)=>{x.disabled=true;if(j===q[3])x.classList.add("correct")});
+ $("stars").textContent="⭐ "+score;$("bar").style.width=((i+1)/qs.length*100)+"%";$("next").style.display="block";
+}
+$("play").onclick=()=>{i=0;score=0;$("stars").textContent="⭐ 0";show("quiz");render()};
+$("next").onclick=()=>{if(i<qs.length-1){i++;render()}else{$("emoji").textContent="🏆";$("question").textContent="Keşif tamamlandı!";$("answers").innerHTML="";$("msg").textContent="⭐ "+score+" / "+qs.length+" doğru. Harika bir vücut kaşifisin!";$("next").textContent="Tekrar oyna";$("next").style.display="block";$("next").onclick=()=>{$("next").textContent="Devam et →";i=0;score=0;render()}}};
+$("backQuiz").onclick=()=>show("home");$("backLearn").onclick=()=>show("home");
+document.querySelectorAll("[data-topic]").forEach(c=>c.onclick=()=>{const d={brain:["🧠 Beyin","Beyin vücudumuzun kontrol merkezlerinden biridir. Düşünmemize, öğrenmemize, hatırlamamıza ve hareketlerimizi yönetmemize yardım eder."],heart:["❤️ Kalp","Kalp bir pompa gibi çalışır ve kanı vücudumuzun her yerine gönderir."],lungs:["🫁 Akciğerler","Akciğerler nefes almamıza ve oksijeni vücudumuzun kullanmasına yardım eder."],bones:["🦴 Kemikler","Kemikler vücudumuza destek ve şekil verir. Kafatası gibi bazıları organları korur."]}[c.dataset.topic];$("learnBox").innerHTML="<div style='font-size:60px'>"+d[0].split(" ")[0]+"</div><h2>"+d[0]+"</h2><p>"+d[1]+"</p>";show("learn")});
+</script>
+</body>
+</html>

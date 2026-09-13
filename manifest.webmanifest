@@ -1,0 +1,10 @@
+{
+  "name": "Vücut Kaşifi",
+  "short_name": "Vücut Kaşifi",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f4ff",
+  "theme_color": "#7c5cff",
+  "lang": "tr",
+  "description": "Çocuklar için oyunlaştırılmış insan vücudu öğrenme uygulaması."
+}
