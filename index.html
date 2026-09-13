@@ -712,34 +712,345 @@ body{
   }
 }
 
+
+/* ==========================================
+   VÜCUT KAŞİFİ 3.2
+   Görsel + Dokun + Dinle + Oyna
+   ========================================== */
+
+.vk-voice{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  margin-top:12px;
+  min-height:48px;
+  border:1px solid rgba(16,42,67,.08);
+  border-radius:16px;
+  background:rgba(255,255,255,.82);
+  color:#087F73;
+  font-weight:900;
+}
+
+.vk-voice:active{
+  transform:scale(.98);
+}
+
+.vk-welcome{
+  text-align:center;
+  margin:8px 0 14px;
+}
+
+.vk-character{
+  font-size:76px;
+  line-height:1;
+  margin-bottom:7px;
+  filter:drop-shadow(0 8px 10px rgba(16,42,67,.10));
+}
+
+.vk-say{
+  color:#6B7280;
+  font-size:14px;
+  font-weight:700;
+}
+
+/* Büyük keşif butonları */
+
+.vk-discover-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.vk-organ{
+  position:relative;
+  min-height:180px;
+  padding:17px 15px;
+  border:1px solid rgba(16,42,67,.07);
+  border-radius:25px;
+  background:#fff;
+  box-shadow:0 12px 30px rgba(16,42,67,.08);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+
+.vk-organ:active{
+  transform:scale(.95);
+  box-shadow:0 7px 18px rgba(16,42,67,.08);
+}
+
+.vk-organ-icon{
+  font-size:62px;
+  line-height:1;
+  margin-bottom:11px;
+}
+
+.vk-organ-name{
+  font-size:19px;
+  font-weight:900;
+  color:#16202A;
+}
+
+.vk-touch{
+  margin-top:6px;
+  font-size:11px;
+  color:#087F73;
+  font-weight:800;
+}
+
+/* Quiz */
+
+.vk-quiz-card{
+  padding:18px 15px;
+  border-radius:27px;
+  background:#fff;
+  box-shadow:0 14px 34px rgba(16,42,67,.08);
+}
+
+.vk-listen{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  min-height:52px;
+  margin:8px 0 15px;
+  border-radius:17px;
+  background:rgba(25,217,181,.11);
+  color:#087F73;
+  font-size:16px;
+  font-weight:900;
+}
+
+.vk-question-visual{
+  text-align:center;
+  font-size:88px;
+  line-height:1;
+  padding:8px 0 12px;
+}
+
+.vk-question-small{
+  text-align:center;
+  color:#6B7280;
+  font-size:13px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.vk-answer-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.vk-answer{
+  min-height:145px;
+  border:2px solid #E8ECEE;
+  border-radius:23px;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  transition:transform .14s ease,border-color .14s ease,background .14s ease;
+}
+
+.vk-answer:active{
+  transform:scale(.95);
+}
+
+.vk-answer-emoji{
+  font-size:57px;
+  line-height:1;
+}
+
+.vk-answer.correct{
+  background:#E9FAF4;
+  border-color:#4FC39A;
+}
+
+.vk-answer.wrong{
+  background:#FFF0F4;
+  border-color:#FF8BA7;
+}
+
+.vk-result{
+  min-height:52px;
+  margin:13px 0;
+  padding:12px;
+  border-radius:16px;
+  background:#F5F8F8;
+  text-align:center;
+  font-size:15px;
+  font-weight:800;
+}
+
+.vk-next{
+  width:100%;
+}
+
+/* Öğrenme */
+
+.vk-learn-visual{
+  text-align:center;
+  font-size:95px;
+  line-height:1;
+  padding:8px 0 12px;
+}
+
+.vk-learn-title{
+  text-align:center;
+  font-size:25px;
+  font-weight:900;
+  margin:5px 0 12px;
+}
+
+.vk-learn-text{
+  text-align:center;
+  color:#5F6870;
+  font-size:16px;
+  line-height:1.55;
+}
+
+.vk-big-action{
+  width:100%;
+  min-height:56px;
+  margin-top:14px;
+  border-radius:18px;
+  background:#19D9B5;
+  color:#073B36;
+  font-weight:900;
+}
+
+/* Alt navigasyon ikonlarını büyüt */
+
+.vk-nav button .nav-icon{
+  font-size:25px;
+}
+
+@media(max-width:380px){
+  .vk-organ{
+    min-height:165px;
+  }
+
+  .vk-organ-icon{
+    font-size:55px;
+  }
+
+  .vk-answer{
+    min-height:132px;
+  }
+
+  .vk-answer-emoji{
+    font-size:51px;
+  }
+}
+
 </style>
 </head>
 <body>
 <div class="app">
 <div class="top"><div class="brand"><img class="brand-logo" src="assets/logo.svg" alt="Vücut Kaşifi"></div><div class="stars" id="stars">⭐ 0</div></div>
 
+
 <section id="home" class="screen active">
-<div class="hero"><h1>Minik bilim insanı!</h1><p>Oyna, keşfet, yıldızları topla. Fark etmeden insan vücudunu öğren.</p><button class="primary" id="play">🚀 Keşfe Başla</button></div>
-<div class="section"><h2>Keşifler</h2><div class="grid">
-<div class="card" data-topic="brain"><div class="icon">🧠</div><h3>Beyin</h3><div class="muted">Vücudun kumandası</div></div>
-<div class="card" data-topic="heart"><div class="icon">❤️</div><h3>Kalp</h3><div class="muted">Kanı pompalar</div></div>
-<div class="card" data-topic="lungs"><div class="icon">🫁</div><h3>Akciğer</h3><div class="muted">Nefes arkadaşımız</div></div>
-<div class="card" data-topic="bones"><div class="icon">🦴</div><h3>Kemikler</h3><div class="muted">Vücudun iskeleti</div></div>
-</div></div>
+
+<div class="vk-welcome">
+  <div class="vk-character">🧑‍🔬</div>
+  <div class="vk-say">Dokun • Dinle • Keşfet</div>
+</div>
+
+<div class="hero">
+  <h1>Hazır mısın?</h1>
+  <p>Vücudumuzu birlikte keşfedelim!</p>
+  <button class="primary" id="play">🚀 Başla</button>
+  <button class="vk-voice" id="welcomeVoice">🔊 Beni dinle</button>
+</div>
+
+<div class="section">
+  <h2>🔎 Keşfet</h2>
+
+  <div class="vk-discover-grid">
+
+    <button class="vk-organ" data-topic="brain">
+      <span class="vk-organ-icon">🧠</span>
+      <span class="vk-organ-name">Beyin</span>
+      <span class="vk-touch">👆 Dokun</span>
+    </button>
+
+    <button class="vk-organ" data-topic="heart">
+      <span class="vk-organ-icon">❤️</span>
+      <span class="vk-organ-name">Kalp</span>
+      <span class="vk-touch">👆 Dokun</span>
+    </button>
+
+    <button class="vk-organ" data-topic="lungs">
+      <span class="vk-organ-icon">🫁</span>
+      <span class="vk-organ-name">Akciğer</span>
+      <span class="vk-touch">👆 Dokun</span>
+    </button>
+
+    <button class="vk-organ" data-topic="bones">
+      <span class="vk-organ-icon">🦴</span>
+      <span class="vk-organ-name">Kemikler</span>
+      <span class="vk-touch">👆 Dokun</span>
+    </button>
+
+  </div>
+</div>
+
 </section>
+
+
 
 <section id="quiz" class="screen">
-<button class="back" id="backQuiz">← Ana sayfa</button>
-<div class="progress"><div class="bar" id="bar"></div></div>
-<div class="bodymap" id="emoji">🧒</div><div class="question" id="question"></div>
-<div class="answers" id="answers"></div><div class="msg" id="msg"></div>
-<button class="primary" id="next" style="display:none;width:100%">Devam et →</button>
+
+<button class="back" id="backQuiz">← Geri</button>
+
+<div class="vk-quiz-card">
+
+  <div class="progress">
+    <div class="bar" id="bar"></div>
+  </div>
+
+  <div class="vk-question-visual" id="emoji">🧒</div>
+
+  <div class="vk-question-small">
+    🔊 Dinle ve doğru resme dokun
+  </div>
+
+  <button class="vk-listen" id="listenQuestion">
+    🔊 Soruyu tekrar dinle
+  </button>
+
+  <div class="vk-answer-grid" id="answers"></div>
+
+  <div class="vk-result" id="msg"></div>
+
+  <button class="primary vk-next" id="next" style="display:none">
+    ➡️ Devam
+  </button>
+
+</div>
+
 </section>
 
+
+
 <section id="learn" class="screen">
-<button class="back" id="backLearn">← Ana sayfa</button>
+
+<button class="back" id="backLearn">← Geri</button>
+
 <div class="learn" id="learnBox"></div>
+
 </section>
+
 </div>
 
 <nav class="vk-nav" aria-label="Ana navigasyon">
@@ -763,84 +1074,518 @@ body{
   </div>
 </nav>
 
+
 <script>
+/* ==========================================
+   VÜCUT KAŞİFİ 3.2 ENGINE
+   ========================================== */
+
 const qs=[
-["🧠","Beynimiz ne işe yarar?",["Düşünmemize ve vücudu yönetmemize yardım eder","Yiyecekleri çiğner","Kanı pompalar"],0,"Beyin, düşünme, öğrenme, hatırlama ve hareketlerimizi yönetmeye yardım eder."],
-["❤️","Kalbimiz ne yapar?",["Kanı pompalar","Sesleri duyar","Yiyecekleri görür"],0,"Kalp, kanı vücudumuzun her yerine gönderen güçlü bir pompa gibi çalışır."],
-["🫁","Nefes aldığımızda hava nereye gider?",["Akciğerlere","Kemiklere","Dişlere"],0,"Akciğerler nefes aldığımız havadaki oksijeni vücudumuzun kullanmasına yardım eder."],
-["🦴","Kemiklerimizin önemli görevlerinden biri nedir?",["Vücudumuza destek olmak","Tatları koklamak","Ses çıkarmak"],0,"Kemikler vücudumuza şekil ve destek verir; kafatası gibi bazı kemikler organları korur."],
-["💪","Kaslarımız neye yardım eder?",["Hareket etmeye","Duymaya","Koklamaya"],0,"Kaslar kemiklerle birlikte çalışarak yürümemize, koşmamıza ve hareket etmemize yardım eder."],
-["👀","Gözlerimiz ne işe yarar?",["Görmemizi sağlar","Kanı pompalar","Yiyecekleri sindirir"],0,"Gözler çevremizdeki dünyayı görmemizi sağlar."],
-["👂","Kulaklarımız ne işe yarar?",["Duymamızı sağlar","Yemekleri parçalar","Kemikleri büyütür"],0,"Kulaklarımız sesleri duymamızı sağlar."],
-["🥣","Midemizin işi nedir?",["Yiyecekleri sindirmeye yardım etmek","Görmek","Nefes almak"],0,"Mide, yediğimiz yiyeceklerin sindirilmesine yardım eder."]
+ {
+  icon:"🧠",
+  speak:"Beynimiz ne işe yarar?",
+  options:[
+   ["🧠","Beyin"],
+   ["❤️","Kalp"],
+   ["🦴","Kemik"],
+   ["🫁","Akciğer"]
+  ],
+  correct:0,
+  info:"Beynimiz düşünmemize ve vücudumuzu yönetmemize yardım eder."
+ },
+ {
+  icon:"❤️",
+  speak:"Kalbimiz ne yapar?",
+  options:[
+   ["👂","Duymak"],
+   ["❤️","Kanı pompalamak"],
+   ["👀","Görmek"],
+   ["🦴","Destek olmak"]
+  ],
+  correct:1,
+  info:"Kalbimiz kanı vücudumuzun her yerine pompalar."
+ },
+ {
+  icon:"🫁",
+  speak:"Nefes aldığımızda hava nereye gider?",
+  options:[
+   ["🦴","Kemiklere"],
+   ["👀","Gözlere"],
+   ["🫁","Akciğerlere"],
+   ["❤️","Kalbe"]
+  ],
+  correct:2,
+  info:"Nefes aldığımız hava akciğerlerimize gider."
+ },
+ {
+  icon:"🦴",
+  speak:"Kemiklerimiz ne işe yarar?",
+  options:[
+   ["🦴","Vücudumuza destek olur"],
+   ["❤️","Kanı pompalar"],
+   ["👂","Sesleri duyar"],
+   ["👀","Görmemizi sağlar"]
+  ],
+  correct:0,
+  info:"Kemiklerimiz vücudumuza destek ve şekil verir."
+ },
+ {
+  icon:"💪",
+  speak:"Kaslarımız neye yardım eder?",
+  options:[
+   ["👃","Koklamaya"],
+   ["💪","Hareket etmeye"],
+   ["👂","Duymaya"],
+   ["👀","Görmeye"]
+  ],
+  correct:1,
+  info:"Kaslarımız hareket etmemize yardım eder."
+ },
+ {
+  icon:"👀",
+  speak:"Gözlerimiz ne işe yarar?",
+  options:[
+   ["❤️","Kanı pompalamak"],
+   ["🦴","Destek olmak"],
+   ["👀","Görmek"],
+   ["🫁","Nefes almak"]
+  ],
+  correct:2,
+  info:"Gözlerimiz çevremizdeki dünyayı görmemizi sağlar."
+ }
 ];
-let i=0,score=0,answered=false;
+
+let i=0;
+let score=0;
+let answered=false;
+
 const $=id=>document.getElementById(id);
-function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));$(id).classList.add("active")}
+
+function show(id){
+ document.querySelectorAll(".screen")
+   .forEach(x=>x.classList.remove("active"));
+
+ $(id).classList.add("active");
+
+ window.scrollTo({
+   top:0,
+   behavior:"smooth"
+ });
+}
+
+/* SES */
+
+function speak(text){
+  /*
+   * VÜCUT KAŞİFİ SES MOTORU
+   * 1. Önce kaliteli yerel MP3
+   * 2. MP3 yoksa geçici Android TTS
+   */
+
+  const audioMap = {
+    "Merhaba minik bilim insanı! İnsan vücudunu birlikte keşfetmeye hazır mısın?":
+      "welcome.mp3",
+
+    "Beynimiz ne işe yarar?":
+      "brain-question.mp3",
+
+    "Kalbimiz ne yapar?":
+      "heart-question.mp3",
+
+    "Nefes aldığımızda hava nereye gider?":
+      "lungs-question.mp3",
+
+    "Kemiklerimiz ne işe yarar?":
+      "bones-question.mp3",
+
+    "Kaslarımız neye yardım eder?":
+      "muscle-question.mp3",
+
+    "Gözlerimiz ne işe yarar?":
+      "eyes-question.mp3",
+
+    "Harika! Doğru cevap. Beynimiz düşünmemize, öğrenmemize ve vücudumuzu yönetmemize yardım eder.":
+      "correct.mp3",
+
+    "Bir daha deneyelim. Beynimiz düşünmemize, öğrenmemize ve vücudumuzu yönetmemize yardım eder.":
+      "try-again.mp3"
+  };
+
+  const file=audioMap[text];
+
+  if(file){
+    const audio=new Audio("assets/audio/"+file);
+
+    audio.preload="auto";
+
+    audio.play().catch(()=>{
+      fallbackSpeak(text);
+    });
+
+    return;
+  }
+
+  fallbackSpeak(text);
+}
+
+function fallbackSpeak(text){
+
+  if(!("speechSynthesis" in window)) return;
+
+  window.speechSynthesis.cancel();
+
+  const u=new SpeechSynthesisUtterance(text);
+
+  u.lang="tr-TR";
+  u.rate=.82;
+  u.pitch=1.04;
+  u.volume=1;
+
+  const voices=window.speechSynthesis.getVoices();
+
+  const tr=voices.find(v =>
+    v.lang &&
+    v.lang.toLowerCase().startsWith("tr")
+  );
+
+  if(tr) u.voice=tr;
+
+  window.speechSynthesis.speak(u);
+}
+
+/* ANA SAYFA */
+
+$("welcomeVoice").onclick=()=>{
+ speak(
+  "Merhaba minik bilim insanı! " +
+  "İnsan vücudunu birlikte keşfetmeye hazır mısın?"
+ );
+};
+
+$("play").onclick=()=>{
+ i=0;
+ score=0;
+ answered=false;
+
+ $("stars").textContent="⭐ 0";
+
+ show("quiz");
+ render();
+
+ setTimeout(()=>{
+   speak(qs[0].speak);
+ },250);
+};
+
+/* QUIZ */
+
 function render(){
- const q=qs[i]; answered=false; $("emoji").textContent=q[0]; $("question").textContent=q[1];
- $("bar").style.width=(i/qs.length*100)+"%"; $("msg").textContent=""; $("next").style.display="none";
+
+ const q=qs[i];
+
+ answered=false;
+
+ $("emoji").textContent=q.icon;
+
+ $("bar").style.width=
+   ((i)/qs.length*100)+"%";
+
+ $("msg").textContent="";
+
+ $("next").style.display="none";
+
  $("answers").innerHTML="";
- q[2].forEach((t,n)=>{const b=document.createElement("button");b.className="answer";b.textContent=t;b.onclick=()=>answer(n,b);$("answers").appendChild(b)})
+
+ q.options.forEach((option,n)=>{
+
+   const b=document.createElement("button");
+
+   b.className="vk-answer";
+
+   b.setAttribute(
+     "aria-label",
+     option[1]
+   );
+
+   b.innerHTML=
+     '<span class="vk-answer-emoji">'+
+     option[0]+
+     '</span>';
+
+   b.onclick=()=>{
+     answer(n,b);
+   };
+
+   $("answers").appendChild(b);
+ });
 }
+
+$("listenQuestion").onclick=()=>{
+ speak(qs[i].speak);
+};
+
 function answer(n,b){
- if(answered)return;answered=true;const q=qs[i];
- if(n===q[3]){score++;b.classList.add("correct");$("msg").textContent="🎉 Harika! "+q[4]}
- else{$("msg").textContent="💡 Doğru cevap: "+q[2][q[3]]+". "+q[4];b.classList.add("wrong")}
- [...$("answers").children].forEach((x,j)=>{x.disabled=true;if(j===q[3])x.classList.add("correct")});
- $("stars").textContent="⭐ "+score;$("bar").style.width=((i+1)/qs.length*100)+"%";$("next").style.display="block";
+
+ if(answered) return;
+
+ answered=true;
+
+ const q=qs[i];
+
+ if(n===q.correct){
+
+   score++;
+
+   b.classList.add("correct");
+
+   $("msg").textContent="🎉 Harika!";
+
+   speak(
+     "Harika! Doğru cevap. "+
+     q.info
+   );
+
+ }else{
+
+   b.classList.add("wrong");
+
+   $("msg").textContent=
+     "💚 Bir daha deneyelim.";
+
+   speak(
+     "Bir daha deneyelim. "+
+     q.info
+   );
+ }
+
+ [...$("answers").children].forEach(
+   (x,j)=>{
+     x.disabled=true;
+
+     if(j===q.correct)
+       x.classList.add("correct");
+   }
+ );
+
+ $("stars").textContent="⭐ "+score;
+
+ $("bar").style.width=
+   ((i+1)/qs.length*100)+"%";
+
+ $("next").style.display="block";
 }
-$("play").onclick=()=>{i=0;score=0;$("stars").textContent="⭐ 0";show("quiz");render()};
-$("next").onclick=()=>{if(i<qs.length-1){i++;render()}else{$("emoji").textContent="🏆";$("question").textContent="Keşif tamamlandı!";$("answers").innerHTML="";$("msg").textContent="⭐ "+score+" / "+qs.length+" doğru. Harika bir vücut kaşifisin!";$("next").textContent="Tekrar oyna";$("next").style.display="block";$("next").onclick=()=>{$("next").textContent="Devam et →";i=0;score=0;render()}}};
-$("backQuiz").onclick=()=>show("home");$("backLearn").onclick=()=>show("home");
-document.querySelectorAll("[data-topic]").forEach(c=>c.onclick=()=>{const d={brain:["🧠 Beyin","Beyin vücudumuzun kontrol merkezlerinden biridir. Düşünmemize, öğrenmemize, hatırlamamıza ve hareketlerimizi yönetmemize yardım eder."],heart:["❤️ Kalp","Kalp bir pompa gibi çalışır ve kanı vücudumuzun her yerine gönderir."],lungs:["🫁 Akciğerler","Akciğerler nefes almamıza ve oksijeni vücudumuzun kullanmasına yardım eder."],bones:["🦴 Kemikler","Kemikler vücudumuza destek ve şekil verir. Kafatası gibi bazıları organları korur."]}[c.dataset.topic];$("learnBox").innerHTML="<div style='font-size:60px'>"+d[0].split(" ")[0]+"</div><h2>"+d[0]+"</h2><p>"+d[1]+"</p>";show("learn")});
 
-// VÜCUT KAŞİFİ 3.0 NAVIGATION
-document.querySelectorAll(".vk-nav button").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelectorAll(".vk-nav button")
-      .forEach(x=>x.classList.remove("active"));
-    btn.classList.add("active");
+$("next").onclick=()=>{
 
-    const target=btn.dataset.nav;
+ if(i<qs.length-1){
 
-    if(target==="home"){
-      show("home");
-      window.scrollTo({top:0,behavior:"smooth"});
-    }
+   i++;
 
-    if(target==="support"){
-      show("learn");
-      $("learnBox").innerHTML=
-        '<div style="font-size:55px">💚</div>'+
-        '<h2>Destek</h2>'+
-        '<p>Zorlandığında dur, nefes al ve kendine zaman tanı. '+
-        'Burada küçük bir mola verebilir ve yeniden keşfe dönebilirsin.</p>';
-    }
+   render();
 
-    if(target==="progress"){
-      show("learn");
-      const total=qs.length;
-      const percent=Math.round((score/total)*100);
-      $("learnBox").innerHTML=
-        '<div style="font-size:55px">📈</div>'+
-        '<h2>İlerlemen</h2>'+
-        '<p><strong>'+score+' / '+total+'</strong> doğru cevap.</p>'+
-        '<div class="progress"><div class="bar" style="width:'+percent+'%"></div></div>'+
-        '<p>Her keşif seni insan vücudunu anlamaya biraz daha yaklaştırır.</p>';
-    }
+   setTimeout(()=>{
+     speak(qs[i].speak);
+   },200);
 
-    if(target==="profile"){
-      show("learn");
-      $("learnBox").innerHTML=
-        '<div style="font-size:55px">🧑‍🔬</div>'+
-        '<h2>Minik Bilim İnsanı</h2>'+
-        '<p>Topladığın yıldızlar: <strong>⭐ '+score+'</strong></p>'+
-        '<p>Keşfetmeye devam et. Bilim merakla başlar.</p>';
-    }
-  });
+ }else{
+
+   $("emoji").textContent="🏆";
+
+   $("answers").innerHTML="";
+
+   $("msg").textContent=
+     "⭐ "+score+" harika cevap!";
+
+   $("next").textContent="🔄 Tekrar oyna";
+
+   $("next").style.display="block";
+
+   speak(
+     "Tebrikler! Keşfi tamamladın. "+
+     score+" doğru cevap verdin."
+   );
+
+   $("next").onclick=()=>{
+     $("next").textContent="➡️ Devam";
+     i=0;
+     score=0;
+     show("quiz");
+     render();
+     setTimeout(()=>{
+       speak(qs[0].speak);
+     },200);
+   };
+ };
+};
+
+/* ORGANLAR */
+
+const organs={
+
+ brain:[
+  "🧠",
+  "Beyin",
+  "Beynimiz düşünmemize, öğrenmemize ve vücudumuzu yönetmemize yardım eder."
+ ],
+
+ heart:[
+  "❤️",
+  "Kalp",
+  "Kalbimiz kanı vücudumuzun her yerine pompalar."
+ ],
+
+ lungs:[
+  "🫁",
+  "Akciğerler",
+  "Akciğerlerimiz nefes almamıza ve oksijeni vücudumuzun kullanmasına yardım eder."
+ ],
+
+ bones:[
+  "🦴",
+  "Kemikler",
+  "Kemiklerimiz vücudumuza destek ve şekil verir."
+ ]
+};
+
+document.querySelectorAll("[data-topic]")
+.forEach(card=>{
+
+ card.onclick=()=>{
+
+   const d=organs[card.dataset.topic];
+
+   $("learnBox").innerHTML=
+     '<div class="vk-learn-visual">'+d[0]+'</div>'+
+     '<div class="vk-learn-title">'+d[1]+'</div>'+
+     '<div class="vk-learn-text">'+
+     '🔊 Dinlemek için aşağıdaki düğmeye dokun.'+
+     '</div>'+
+     '<button class="vk-big-action" id="speakLearn">'+
+     '🔊 Dinle'+
+     '</button>';
+
+   show("learn");
+
+   setTimeout(()=>{
+     speak(d[2]);
+   },250);
+
+   $("speakLearn").onclick=()=>{
+     speak(d[2]);
+   };
+ };
 });
 
+/* GERİ */
+
+$("backQuiz").onclick=()=>{
+ show("home");
+};
+
+$("backLearn").onclick=()=>{
+ show("home");
+};
+
+/* ALT NAVİGASYON */
+
+document.querySelectorAll(".vk-nav button")
+.forEach(btn=>{
+
+ btn.addEventListener("click",()=>{
+
+   document.querySelectorAll(".vk-nav button")
+    .forEach(x=>x.classList.remove("active"));
+
+   btn.classList.add("active");
+
+   const target=btn.dataset.nav;
+
+   if(target==="home"){
+     show("home");
+     speak("Ana sayfa");
+   }
+
+   if(target==="support"){
+
+     show("learn");
+
+     $("learnBox").innerHTML=
+       '<div class="vk-learn-visual">💚</div>'+
+       '<div class="vk-learn-title">Yardım</div>'+
+       '<div class="vk-learn-text">'+
+       'Burada güvendesin. Birlikte keşfetmeye devam edebiliriz.'+
+       '</div>'+
+       '<button class="vk-big-action" id="supportSpeak">'+
+       '🔊 Dinle'+
+       '</button>';
+
+     speak(
+       "Burada güvendesin. "+
+       "Birlikte keşfetmeye devam edebiliriz."
+     );
+
+     $("supportSpeak").onclick=()=>{
+       speak(
+         "Burada güvendesin. "+
+         "Birlikte keşfetmeye devam edebiliriz."
+       );
+     };
+   }
+
+   if(target==="progress"){
+
+     show("learn");
+
+     const percent=
+       Math.round((score/qs.length)*100);
+
+     $("learnBox").innerHTML=
+       '<div class="vk-learn-visual">🏆</div>'+
+       '<div class="vk-learn-title">Yıldızların</div>'+
+       '<div class="vk-learn-text">'+
+       '⭐ '+score+
+       '<br><br>'+
+       'Her doğru cevap seni yeni bir keşfe götürür.'+
+       '</div>'+
+       '<div class="progress" style="margin-top:18px">'+
+       '<div class="bar" style="width:'+percent+'%"></div>'+
+       '</div>';
+
+     speak(
+       "Şu anda "+score+" yıldızın var."
+     );
+   }
+
+   if(target==="profile"){
+
+     show("learn");
+
+     $("learnBox").innerHTML=
+       '<div class="vk-learn-visual">🧑‍🔬</div>'+
+       '<div class="vk-learn-title">Minik Bilim İnsanı</div>'+
+       '<div class="vk-learn-text">'+
+       'Sen bir vücut kaşifisin!'+
+       '<br><br>⭐ '+score+
+       '</div>'+
+       '<button class="vk-big-action" id="profileSpeak">'+
+       '🔊 Dinle'+
+       '</button>';
+
+     speak(
+       "Sen bir minik bilim insanısın. "+
+       "Keşfetmeye devam et!"
+     );
+
+     $("profileSpeak").onclick=()=>{
+       speak(
+         "Sen bir minik bilim insanısın. "+
+         "Keşfetmeye devam et!"
+       );
+     };
+   }
+ });
+});
 </script>
+
 </body>
 </html>
